@@ -8,7 +8,8 @@ import connectDB from './config/db';
 // --- Routers ---
 import userRouter from './routes/user.routes';
 import videoRouter from './routes/video.routes';
-import cartRouter from './routes/cart.routes'; // 1. IMPORT the new cart router
+import cartRouter from './routes/cart.routes';
+import paymentRouter from './routes/payment.routes'; // Import the new router
 
 // --- Initializations ---
 dotenv.config();
@@ -24,7 +25,8 @@ app.use(express.json());
 // --- API Routes ---
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/videos', videoRouter);
-app.use('/api/v1/cart', cartRouter); // 2. USE the new cart router
+app.use('/api/v1/cart', cartRouter);
+app.use('/api/v1/payment', paymentRouter); // Use the new router
 
 // --- Server Start ---
 app.listen(PORT, () => {
